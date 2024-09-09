@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="rap">
+      <div class="header">
+        <div class="btn prevDay"></div>
+        <h2 class="dateTitle"></h2>
+        <div class="btn nextDay"></div>
+      </div>
+
+      <div class="grid dateHead">
+        <div>일</div>
+        <div>월</div>
+        <div>화</div>
+        <div>수</div>
+        <div>목</div>
+        <div>금</div>
+        <div>토</div>
+      </div>
+
+      <div class="grid dateBoard"></div>
+    </div>
+    <div class="tableContainer" style="display: none">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>날짜</th>
+            <th>내용</th>
+            <th>지출금액</th>
+            <th>수입금액</th>
+            <th>분류</th>
+            <th>지출방법</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 표 내용이 추가될 자리 -->
+        </tbody>
+      </table>
+    </div>
+    <button id="addRowBtn" style="display: none">행추가</button>
+    <script src="app.js"></script>
+  </body>
+</html>

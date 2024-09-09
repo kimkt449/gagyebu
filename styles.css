@@ -1,0 +1,127 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+/* 달력 */
+.dateHead div {
+  background: #e31b20;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 3px;
+}
+
+.grid div {
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.dateBoard div {
+  color: #222;
+  font-weight: bold;
+  min-height: 6rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.noColor {
+  background: #eee;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+/* 좌우 버튼 */
+.btn {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #000;
+  border-width: 3px 3px 0 0;
+  cursor: pointer;
+}
+
+.prevDay {
+  transform: rotate(-135deg);
+}
+
+.nextDay {
+  transform: rotate(45deg);
+}
+
+/* ---- */
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: Pretendard;
+}
+
+.rap {
+  max-width: 700px; /* 820px의 70%인 574px로 조정 */
+  padding: 0 0.4rem;
+  margin-top: 1.4rem;
+  transform: scale(0.7); /* 크기를 70%로 줄임 */
+  transform-origin: top center; /* 축소 시 위치를 중앙에 맞춤 */
+}
+
+.dateHead {
+  margin: 0.4rem 0;
+}
+
+/* 아래 표 */
+
+.tableContainer {
+  margin-top: 0.5rem;
+  margin-bottom: -30px;
+  overflow-x: auto;
+  transform: scale(0.9); /* 표를 80%로 축소 */
+  transform-origin: top center; /* 축소 시 위치를 중앙에 맞춤 */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+table input {
+  width: 100%; /* 인풋 창을 셀의 너비에 맞춤 */
+  height: 100%; /* 인풋 창을 셀의 높이에 맞춤 */
+  border: none; /* 테두리 제거 */
+  padding: 0; /* 내부 여백 제거 */
+  margin: 0; /* 외부 여백 제거 */
+  box-sizing: border-box; /* 크기 계산 시 패딩과 테두리 포함 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
+
+table input:focus {
+  outline: none; /* 포커스 시 나타나는 기본 테두리 제거 */
+}
+
+#addRowBtn {
+  margin-left: 100px;
+  margin-bottom: 100px;
+}
