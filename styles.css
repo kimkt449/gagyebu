@@ -3,10 +3,12 @@
 body {
   margin-top: 30px;
   margin-right: 20px;
+  background-color: #f0f8f0; /* 연한 녹색 배경색 */
 }
+
 /* 달력 */
 .dateHead div {
-  background: #e31b20;
+  background: #4caf50; /* 진한 녹색 */
   color: #fff;
   text-align: center;
   border-radius: 5px;
@@ -14,7 +16,7 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 100px);
   grid-gap: 3px;
 }
 
@@ -40,6 +42,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
+  width: 700px;
   padding: 1rem 2rem;
 }
 
@@ -48,7 +51,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  border: 3px solid #000;
+  border: 3px solid #004d00; /* 진한 녹색 */
   border-width: 3px 3px 0 0;
   cursor: pointer;
 }
@@ -89,7 +92,7 @@ body {
   margin-top: -100px;
   margin-bottom: -30px;
   overflow-x: auto;
-  transform: scale(0.9); /* 표를 80%로 축소 */
+  transform: scale(0.9); /* 표를 90%로 축소 */
   transform-origin: top center; /* 축소 시 위치를 중앙에 맞춤 */
 }
 
@@ -109,7 +112,8 @@ body {
 }
 
 .tableContainer table th {
-  background-color: #f2f2f2;
+  background-color: #2c6b2f; /* 표의 진한 녹색 */
+  color: #fff;
   font-weight: bold;
 }
 
@@ -134,6 +138,9 @@ body {
   border-radius: 10%;
   width: 50px;
   height: 20px;
+  background-color: #004d00; /* 진한 녹색 버튼 배경색 */
+  color: #fff;
+  border: none;
 }
 
 .dateBoard div span {
@@ -159,6 +166,9 @@ body {
   border-radius: 10%;
   width: 50px;
   height: 20px;
+  background-color: #004d00; /* 진한 녹색 버튼 배경색 */
+  color: #fff;
+  border: none;
 }
 
 .btns {
@@ -185,7 +195,7 @@ input.custom-input {
 }
 
 .chart-container {
-  width: 35%; /* 전체 가로 면적의 40% */
+  width: 35%; /* 전체 가로 면적의 35% */
   margin-left: 10px; /* 원그래프와 표 사이 간격 */
 }
 
@@ -213,5 +223,64 @@ input.custom-input {
 }
 
 #summaryTable th {
-  background-color: #f2f2f2;
+  background-color: #2c6b2f; /* 진한 녹색 */
+  color: #fff;
+}
+
+.chart-container h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .calendar-container,
+  .chart-container,
+  .summary-container {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .chart-container {
+    margin-top: 20px;
+  }
+
+  #addRowBtn,
+  #saveDataBtn {
+    margin-left: 0;
+    margin-bottom: 20px;
+    font-size: 12px;
+    width: 100px;
+  }
+}
+
+#addRowBtn,
+#saveDataBtn {
+  font-size: 15px;
+  border-radius: 10%;
+  width: 50px;
+  height: 20px;
+  background-color: #004d00; /* 진한 녹색 버튼 배경색 */
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease; /* 모든 속성에 대한 부드러운 애니메이션 */
+}
+
+#addRowBtn:hover,
+#saveDataBtn:hover {
+  background-color: #005c00; /* 버튼 호버 시 배경색 변경 */
+  transform: scale(1.1); /* 버튼 확대 */
+}
+
+#addRowBtn:active,
+#saveDataBtn:active {
+  background-color: #003d00; /* 버튼 클릭 시 배경색 변경 */
+  transform: scale(1); /* 버튼 원래 크기로 돌아가기 */
 }

@@ -565,8 +565,7 @@ const initializePieChart = () => {
   const categoryLabels = Object.keys(categoryData);
   const savedColors =
     JSON.parse(localStorage.getItem("pieChartColors")) ||
-    generateFixedColors(categoryLabels.length);
-  localStorage.setItem("pieChartColors", JSON.stringify(savedColors));
+    localStorage.setItem("pieChartColors", JSON.stringify(savedColors));
 
   updatePieChartWithCumulativeData(categoryData, savedColors);
   updateSummaryTable(totalIncome, totalExpense);
