@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kimkt449.github.io/gagyebu/sitemap.xml
