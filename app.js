@@ -565,7 +565,8 @@ const initializePieChart = () => {
   const categoryLabels = Object.keys(categoryData);
   const savedColors =
     JSON.parse(localStorage.getItem("pieChartColors")) ||
-    localStorage.setItem("pieChartColors", JSON.stringify(savedColors));
+    generateFixedColors(categoryLabels.length);
+  localStorage.setItem("pieChartColors", JSON.stringify(savedColors));
 
   updatePieChartWithCumulativeData(categoryData, savedColors);
   updateSummaryTable(totalIncome, totalExpense);
@@ -622,3 +623,24 @@ document.addEventListener("DOMContentLoaded", () => {
   makeCalendar(currentDate);
   initializePieChart();
 });
+function generateFixedColors(count) {
+  const baseColors = [
+    "#FF6384",
+    "#36A2EB",
+    "#FFCE56",
+    "#4BC0C0",
+    "#FF9F40",
+    "#FFCD56",
+    "#36A2EB",
+    "#FF6384",
+    "#4BC0C0",
+    "#FF9F40",
+  ];
+
+  const colors = [];
+  for (let i = 0; i < count; i++) {
+    colors.push(baseColors[i % baseColors.length]);
+  }
+
+  return colors;
+}
