@@ -5,26 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   </head>
   <body>
-    <div class="rap">
-      <div class="header">
-        <div class="btn prevDay"></div>
-        <h2 class="dateTitle"></h2>
-        <div class="btn nextDay"></div>
+    <div class="container">
+      <div class="rap calendar-container">
+        <div class="header">
+          <div class="btn prevDay"></div>
+          <h2 class="dateTitle"></h2>
+          <div class="btn nextDay"></div>
+        </div>
+        <div class="grid dateHead">
+          <div>일</div>
+          <div>월</div>
+          <div>화</div>
+          <div>수</div>
+          <div>목</div>
+          <div>금</div>
+          <div>토</div>
+        </div>
+        <div class="grid dateBoard"></div>
       </div>
-
-      <div class="grid dateHead">
-        <div>일</div>
-        <div>월</div>
-        <div>화</div>
-        <div>수</div>
-        <div>목</div>
-        <div>금</div>
-        <div>토</div>
+      <div class="summary-container">
+        <h2>이달의 수입과 지출</h2>
+        <table id="summaryTable">
+          <thead>
+            <tr>
+              <th>총 수입</th>
+              <th>총 지출</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="totalIncome">0</td>
+              <td id="totalExpense">0</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <div class="grid dateBoard"></div>
+      <!-- 원그래프를 표시할 영역 -->
+      <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+      </div>
     </div>
     <div class="tableContainer" style="display: none">
       <table>
@@ -44,7 +67,12 @@
         </tbody>
       </table>
     </div>
-    <button id="addRowBtn" style="display: none">행추가</button>
+    <div class="btns">
+      <button id="addRowBtn" style="display: none">행추가</button
+      ><button id="saveDataBtn" style="display: none; margin-top: 0.5rem">
+        저장
+      </button>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
