@@ -538,6 +538,20 @@ const initializePieChart = () => {
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth();
 
+  const generateFixedColors = (numColors) => {
+    const colors = [
+      "rgba(255, 99, 132, 0.2)",
+      "rgba(54, 162, 235, 0.2)",
+      "rgba(255, 206, 86, 0.2)",
+      "rgba(75, 192, 192, 0.2)",
+      "rgba(153, 102, 255, 0.2)",
+      "rgba(255, 159, 64, 0.2)",
+      "rgba(199, 199, 199, 0.2)",
+      "rgba(83, 102, 255, 0.2)",
+    ];
+    return colors.slice(0, numColors);
+  };
+
   let categoryData = {};
   let totalIncome = 0;
   let totalExpense = 0;
